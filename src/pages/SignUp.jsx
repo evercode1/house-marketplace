@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import KeyboardArrowRightIcon from '../components/svgs/KeyboardArrowRightIcon'
 import VisibilityIcon from '../components/svgs/VisibilityIcon'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from '../firebase.config'
 
 function SignUp() {
@@ -27,7 +28,6 @@ function SignUp() {
 
     try {
 
-      console.log(db)
 
       const auth = getAuth()
 
@@ -40,6 +40,14 @@ function SignUp() {
         displayName: name 
 
       })
+
+      const formDataCopy = {...formData}
+  
+      delete formDataCopy.password
+
+      formDataCopy.timestamp = serverTimestamp()
+
+      await setDoc(doc(db, "users", user.uid), formDataCopy)
 
       navigate('/')
 
@@ -62,7 +70,6 @@ function SignUp() {
     }))
 
   }
-
 
     return (
   
