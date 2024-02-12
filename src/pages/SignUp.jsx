@@ -1,5 +1,6 @@
 import { useState } from 'react'  
 import { Link, useNavigate } from 'react-router-dom'
+import {toast} from 'react-toastify'
 import KeyboardArrowRightIcon from '../components/svgs/KeyboardArrowRightIcon'
 import VisibilityIcon from '../components/svgs/VisibilityIcon'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -53,7 +54,7 @@ function SignUp() {
 
     } catch (error) {
 
-      console.log(error)
+      toast.error('Something went wrong with registration. Please try again.')
 
     }
 

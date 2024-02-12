@@ -1,5 +1,6 @@
 import { useState } from 'react'  
 import { Link, useNavigate } from 'react-router-dom'
+import {toast} from 'react-toastify'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import KeyboardArrowRightIcon from '../components/svgs/KeyboardArrowRightIcon'
 import VisibilityIcon from '../components/svgs/VisibilityIcon'
@@ -50,16 +51,11 @@ function SignIn() {
 
       } catch (error) {
 
-        console.log(error)
+        toast.error('Bad Credentials')
 
       }
 
   }
-
-    
-
-  
-
 
     return (
   
