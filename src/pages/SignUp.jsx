@@ -6,6 +6,7 @@ import VisibilityIcon from '../components/svgs/VisibilityIcon'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from '../firebase.config'
+import OAuth from '../components/OAuth'
 
 function SignUp() {
 
@@ -141,7 +142,7 @@ function SignUp() {
 
                 </form>
 
-                {/* google OAuth */}
+                <OAuth />
 
                 <Link to="/sign-in" className="registerLink">
 

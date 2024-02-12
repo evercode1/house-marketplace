@@ -4,6 +4,7 @@ import {toast} from 'react-toastify'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import KeyboardArrowRightIcon from '../components/svgs/KeyboardArrowRightIcon'
 import VisibilityIcon from '../components/svgs/VisibilityIcon'
+import OAuth from '../components/OAuth'
 
 function SignIn() {
 
@@ -128,7 +129,7 @@ function SignIn() {
 
                 </form>
 
-                {/* google OAuth */}
+                <OAuth />
 
                 <Link to="/sign-up" className="registerLink">
 
