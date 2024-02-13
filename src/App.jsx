@@ -27,14 +27,14 @@ function App() {
 
           <Route path="/offers" element={<Offers />} />
 
-          <Route path="/category/:name" element={<Category />} />
+          <Route path="/category/:categoryName" element={<Category />} />
 
           <Route path='profile' element={<PrivateRoute />} >
               <Route path='/profile' element={<Profile />} />
           </Route>
 
           <Route path="/sign-in" element={<SignIn />} />
-          
+
           <Route path="/sign-up" element={<SignUp />} />
 
         </Routes>
